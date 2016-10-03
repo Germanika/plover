@@ -68,6 +68,9 @@ class StenoDictionary(collections.MutableMapping):
     def __contains__(self, key):
         return self.get(key) is not None
 
+    def __lt__(self, other):
+        return self.get_path() < other.get_path()
+
     def reverse_lookup(self, value):
         return self.reverse.get(value, ())
 
@@ -78,7 +81,7 @@ class StenoDictionary(collections.MutableMapping):
         self._path = path    
 
     def get_path(self):
-        return self._path    
+        return self._path
 
     @property
     def _longest_key(self):
