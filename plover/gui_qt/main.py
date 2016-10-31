@@ -1,6 +1,7 @@
 # Python 2/3 compatibility.
 from __future__ import print_function
 
+import locale
 import sys
 import signal
 
@@ -49,6 +50,7 @@ class Application(object):
         self._translator.load('qtbase_' + get_language(), translations_dir)
         self._app.installTranslator(self._translator)
 
+        locale.setlocale(locale.LC_ALL, '')
         QApplication.setQuitOnLastWindowClosed(False)
 
         signal.signal(signal.SIGINT, lambda signum, stack: QCoreApplication.quit())
