@@ -445,10 +445,11 @@ if __name__ == '__main__':
         qt   = plover.gui_qt.main
 
         [plover.gui.qt.tool]
-        add_translation = plover.gui_qt.add_translation:AddTranslation
+        add_translation = plover.gui_qt.add_translation_dialog:AddTranslationDialog
         lookup = plover.gui_qt.lookup_dialog:LookupDialog
         paper_tape = plover.gui_qt.paper_tape:PaperTape
         suggestions = plover.gui_qt.suggestions_dialog:SuggestionsDialog
+        builder = plover.gui_qt.dictionary_builder:DictionaryBuilder
 
         [plover.machine]
         Gemini PR = plover.machine.geminipr:GeminiPr
